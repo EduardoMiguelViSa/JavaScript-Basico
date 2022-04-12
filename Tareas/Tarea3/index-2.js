@@ -1,21 +1,16 @@
 let hasta = 10;
 
-for (i = 0; i <= hasta; i++) {
-    switch (i) {
-        case 2:
-            console.log(" Número primo " + i + ".");
-            break;     
-        case 3:
-            console.log(" Número primo " + i + ".");
-            break;
-        case 5:
-            console.log(" Número primo " + i + ".");
-            break;
-        case 7:
-            console.log(" Número primo " + i + ".");
-            break;
-        default:
-            console.log(" Esta es la iteración número " + i + ".")
-            break;
+bucle:
+    for (i = 0; i <= hasta; i++) {
+        if (i <= 1 || i === 4) {
+            console.log(" Esta es la iteración número " + i + ".");
+            continue bucle;
+        }
+        for (x = 2; x < i/2; x++) {
+            if (i%x === 0) {
+                console.log(" Esta es la iteración número " + i + ".");
+                continue bucle;
+            }
+        }
+        console.log(" Número primo "+ i + ".")
     }
-}
